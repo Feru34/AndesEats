@@ -9,6 +9,13 @@ function App() {
   const [pointY, setPointY] = useState(0);
   const [start, setStart] = useState({ x: 0, y: 0 });
   
+  const [points, setPoints] = useState([
+    { x: 200, y: 150, info: 'Punto 1: Información sobre este punto' },
+    { x: 400, y: 300, info: 'Punto 2: Información sobre este punto' },
+    // Agrega más puntos según sea necesario
+  ]);
+  const [activePoint, setActivePoint] = useState(null);
+
   const zoomRef = useRef(null);
   const imgRef = useRef(null);
   const containerRef = useRef(null);
@@ -138,14 +145,36 @@ function App() {
     };
   }, [scale, panning, pointX, pointY, start]);
 
+  const handlePointClick = (info) => {
+    setActivePoint(info);
+  };
+
   return (
     <div>
-      <Header ></Header>    
+      <Header />
       <div className="zoom_outer" ref={containerRef}>
-        <div id="zoom" ref={zoomRef}>
+        <div id="zoom" ref={zoomRef} style={{ transform: `translate(${pointX}px, ${pointY}px) scale(${scale})` }}>
           <img ref={imgRef} src="https://campusinfo.uniandes.edu.co/images/stories/campus/Recursos_fisicos/general_debrigard_2004.jpg" alt="zoom" />
+          {points.map((point, index) => (
+            <div
+              key={index}
+              className="point"
+              style={{
+                left: `${point.x }px`,
+                top: `${point.y }px`,
+                transform: `scale(${1 / scale})`
+              }}
+              onClick={() => handlePointClick(point.info)}
+            />
+          ))}
         </div>
       </div>
+      {activePoint && (
+        <div className="info-box">
+          <p>{activePoint}</p>
+          <button onClick={() => setActivePoint(null)}>Cerrar</button>
+        </div>
+      )}
     </div>
   );
 }

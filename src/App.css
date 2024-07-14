@@ -17,6 +17,7 @@ html, body {
   transform-origin: 0px 0px;
   transform: scale(1) translate(0px, 0px);
   cursor: grab;
+  
 }
 div#zoom > img {
   width: 100%;
@@ -31,3 +32,21 @@ div#zoom > img {
   position: relative;
 }
 
+.point {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.info-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+  z-index: 1000;
+}
