@@ -10,8 +10,8 @@ function App() {
   const [start, setStart] = useState({ x: 0, y: 0 });
   
   const [points, setPoints] = useState([
-    { x: 200, y: 150, info: 'Punto 1: Información sobre este punto' },
-    { x: 400, y: 300, info: 'Punto 2: Información sobre este punto' },
+    { x: 20, y: 15, info: 'Punto 1: Información sobre este punto' },
+    { x: 40, y: 30, info: 'Punto 2: Información sobre este punto' },
     // Agrega más puntos según sea necesario
   ]);
   const [activePoint, setActivePoint] = useState(null);
@@ -160,8 +160,8 @@ function App() {
               key={index}
               className="point"
               style={{
-                left: `${point.x }px`,
-                top: `${point.y }px`,
+                left: `${point.x }%`,
+                top: `${point.y }%`,
                 transform: `scale(${1 / scale})`
               }}
               onClick={() => handlePointClick(point.info)}
