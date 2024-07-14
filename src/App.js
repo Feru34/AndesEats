@@ -12,8 +12,8 @@ function App() {
   const [start, setStart] = useState({ x: 0, y: 0 });
   
   const [points, setPoints] = useState([
-    { x: 20, y: 15, info: 'Punto 1: Información sobre este punto' },
-    { x: 40, y: 30, info: 'Punto 2: Información sobre este punto' },
+    { x: 30, y: 56, info: 'Punto 1: Información sobre este punto' },
+    { x: 33, y: 68, info: 'Punto 2: Información sobre este punto' },
     // Agrega más puntos según sea necesario
   ]);
   const [activePoint, setActivePoint] = useState(null);
