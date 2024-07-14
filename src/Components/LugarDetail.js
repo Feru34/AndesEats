@@ -1,4 +1,5 @@
-import React from 'react';
+// src/Components/LugarDetail.js 
+ import React from 'react';
 import './LugarDetail.css';
 
 // Componente para renderizar estrellas

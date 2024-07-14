@@ -1,4 +1,4 @@
-// src/Components/Header.js
+// src/Components/IMap.js
 import React, { useRef, useState, useEffect } from 'react';
 import Mapa from '../mapa.png';
 import LugarDetail from './LugarDetail';
@@ -10,8 +10,6 @@ const IMapa = () => {
   const [pointX, setPointX] = useState(0);
   const [pointY, setPointY] = useState(0);
   const [start, setStart] = useState({ x: 0, y: 0 });
-
-  
   const [points, setPoints] = useState([
     { x: 30, y: 56, info: 'Punto 1: Información sobre este punto' },
     { x: 33, y: 68, info: 'Punto 2: Información sobre este punto' },
@@ -56,6 +54,7 @@ const IMapa = () => {
     };
 
     const handleStartPan = (e) => {
+      if (e.target.classList.contains('point')) return; // Evita iniciar pan al hacer clic en un punto
       e.preventDefault();
       const position = getPositionFromEvent(e);
       setStart({ x: position.x - pointX, y: position.y - pointY });
@@ -73,8 +72,8 @@ const IMapa = () => {
     };
 
     const handlePan = (e) => {
-      e.preventDefault();
       if (!panning) return;
+      e.preventDefault();
       
       if (e.touches && e.touches.length === 2) {
         // Pinch zoom
@@ -151,9 +150,10 @@ const IMapa = () => {
   const handlePointClick = (info) => {
     setActivePoint(info);
   };
+
   return (
     <div>
-        <div className="zoom_outer" ref={containerRef}>
+      <div className="zoom_outer" ref={containerRef}>
         <div id="zoom" ref={zoomRef} style={{ transform: `translate(${pointX}px, ${pointY}px) scale(${scale})` }}>
           <img ref={imgRef} src={Mapa} alt="zoom" />
           {points.map((point, index) => (
@@ -161,11 +161,12 @@ const IMapa = () => {
               key={index}
               className="point"
               style={{
-                left: `${point.x }%`,
-                top: `${point.y  }%`,
+                left: `${point.x}%`,
+                top: `${point.y}%`,
                 transform: `scale(${1 / scale})`
               }}
               onClick={() => handlePointClick(point.info)}
+              onTouchStart={() => handlePointClick(point.info)} // Añadir evento onTouchStart
             />
           ))}
         </div>
@@ -175,12 +176,10 @@ const IMapa = () => {
           SetActivePoint={setActivePoint}
           Nombre="Nombre del Restaurante"
           Rating={4.5}
-          Ubicacion = "Dirección del restaurante"
-          //Etiquetas = {["Vegetariano", "Almuerzos", "Meriendas"]}
-          Descripcion = "Descripción del restaurante y sus servicios."
-          Comentarios = {["Excelente servicio.", "Comida deliciosa."]}
+          Ubicacion="Dirección del restaurante"
+          Descripcion="Descripción del restaurante y sus servicios."
+          Comentarios={["Excelente servicio.", "Comida deliciosa."]}
         />
-
       )}
     </div>
   );
