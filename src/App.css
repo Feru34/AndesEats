@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -41,12 +42,4 @@ div#zoom > img {
   cursor: pointer;
 }
 
-.info-box {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid black;
-  z-index: 1000;
-}
+

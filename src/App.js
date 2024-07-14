@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Header from './Components/header';
+import LugarDetail from './Components/LugarDetail';
 import './App.css';
 
 function App() {
@@ -161,7 +162,7 @@ function App() {
               className="point"
               style={{
                 left: `${point.x }%`,
-                top: `${point.y }%`,
+                top: `${point.y  }%`,
                 transform: `scale(${1 / scale})`
               }}
               onClick={() => handlePointClick(point.info)}
@@ -170,10 +171,15 @@ function App() {
         </div>
       </div>
       {activePoint && (
-        <div className="info-box">
-          <p>{activePoint}</p>
-          <button onClick={() => setActivePoint(null)}>Cerrar</button>
-        </div>
+        <LugarDetail  
+          SetActivePoint={setActivePoint}
+          Nombre="Nombre del Restaurante"
+          Rating={4.5}
+          Ubicacion = "Dirección del restaurante"
+          Descripcion = "Descripción del restaurante y sus servicios."
+          Comentarios = {["Excelente servicio.", "Comida deliciosa."]}
+        />
+
       )}
     </div>
   );
