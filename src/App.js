@@ -176,6 +176,7 @@ function App() {
           Nombre="Nombre del Restaurante"
           Rating={4.5}
           Ubicacion = "Dirección del restaurante"
+          //Etiquetas = {["Vegetariano", "Almuerzos", "Meriendas"]}
           Descripcion = "Descripción del restaurante y sus servicios."
           Comentarios = {["Excelente servicio.", "Comida deliciosa."]}
         />
