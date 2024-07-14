@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Header from './Components/header';
 import LugarDetail from './Components/LugarDetail';
+import Mapa from './mapa.png';
 import './App.css';
 
 function App() {
@@ -155,7 +156,7 @@ function App() {
       <Header />
       <div className="zoom_outer" ref={containerRef}>
         <div id="zoom" ref={zoomRef} style={{ transform: `translate(${pointX}px, ${pointY}px) scale(${scale})` }}>
-          <img ref={imgRef} src="https://campusinfo.uniandes.edu.co/images/stories/campus/Recursos_fisicos/general_debrigard_2004.jpg" alt="zoom" />
+          <img ref={imgRef} src={Mapa} alt="zoom" />
           {points.map((point, index) => (
             <div
               key={index}
