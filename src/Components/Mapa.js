@@ -5,7 +5,7 @@ import LugarDetail from './LugarDetail';
 import './Mapa.css';
 
 const Header = () => {
-    const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(1);
   const [panning, setPanning] = useState(false);
   const [pointX, setPointX] = useState(0);
   const [pointY, setPointY] = useState(0);
