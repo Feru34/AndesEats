@@ -5,8 +5,8 @@ import './Header.css';
 const Header = () => {
   return (
     <header className="header">
-      <img className="LogoHeader" src="../../public/2.png" />
       <div className="header-content">
+        <img className="LogoHeader" src="https://raw.githubusercontent.com/Feru34/ComiAndes/main/public/3.png?token=GHSAT0AAAAAACURFNFBN73OPN6GV4CPGWHAZUTN6IQ" alt="Logo" />
         <nav>
           <ul className="nav-list">
             <li className="nav-item"><a href="#about">Vegetariano</a></li>
