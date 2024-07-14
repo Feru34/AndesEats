@@ -4,7 +4,7 @@ import Mapa from '../mapa.png';
 import LugarDetail from './LugarDetail';
 import './Mapa.css';
 
-const Header = () => {
+const IMapa = () => {
   const [scale, setScale] = useState(1);
   const [panning, setPanning] = useState(false);
   const [pointX, setPointX] = useState(0);
@@ -186,4 +186,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default IMapa;
