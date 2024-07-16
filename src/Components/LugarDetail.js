@@ -24,10 +24,10 @@ const LugarDetail = (props) => {
         <h3 className="ubicacion" >Dirección: {props.Ubicacion}</h3>
         <p className="description">{props.Descripcion}</p>
         <div className="comments">
-            <h3>Comentarios de clientes:</h3>
+            <h3>Etiquetas :</h3>
             <ul className="comment-list">
-            {props.Comentarios.map((comentario, index) => (
-                <li key={index} className="comment">{comentario}</li>
+            {props.Etiquetas.map((etiqueta, index) => (
+                <li key={index} className="comment">{etiqueta}</li>
             ))}
             </ul>
         </div>

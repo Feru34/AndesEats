@@ -178,7 +178,7 @@ const IMapa = () => {
           Rating={4.5}
           Ubicacion="Dirección del restaurante"
           Descripcion="Descripción del restaurante y sus servicios."
-          Comentarios={["Excelente servicio.", "Comida deliciosa."]}
+          Etiquetas={["Mexicano", "Almuerzo"]}
         />
       )}
     </div>
