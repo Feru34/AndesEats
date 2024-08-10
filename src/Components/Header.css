@@ -19,24 +19,47 @@
   height: 60px;
 }
 
+
 .nav-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
+  list-style-type: none; /* Elimina los puntos de lista */
+  display: flex; /* Alinea los ítems de la lista horizontalmente */
+  justify-content: flex-end; /* Alinea los ítems a la derecha */
   padding: 0;
+  margin: 0;
 }
 
-.nav-item a {
-  color: #333333;
+.nav-item {
+  margin-left: 15px; /* Espacio entre los botones */
+}
+
+.nav-link {
+  background-color: #f7f7f7; /* Color de fondo de los botones */
+  border: 0px solid #ccc; /* Borde de los botones */
+  font-family: 'Ubuntu', sans-serif;
   font-size: 1.2em;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: #000000; /* Color del texto */
+  padding: 5px 10px; /* Espacio interno de los botones */
+  text-decoration: none; /* Elimina la subrayado de los enlaces */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Suaviza el cambio de color de fondo */
 }
 
-.nav-item a:hover {
-  color: #00ccff;
+.nav-link:hover {
+  color: #00d9ff; /* Color del texto */
 }
+
+.nav-link:active {
+  background-color: #ccc; /* Color de fondo al hacer clic */
+}
+
+.nav-link:focus {
+  outline: none; /* Elimina el borde de enfoque predeterminado */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Agrega una sombra al enfocar */
+}
+
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -56,15 +79,8 @@
     display: block;
   }
 
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
 
-  .nav-item a {
-    font-size: 1em;
-  }
+  
 }
 
 @media (min-width: 769px) {

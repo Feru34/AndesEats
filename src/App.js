@@ -5,12 +5,13 @@ import Mapa from './Components/Mapa'
 import './App.css';
 
 function App() {
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   
 
   return (
     <div>
-      <Header />
-      <Mapa/>
+      <Header setFilteredRestaurants={setFilteredRestaurants} />
+      <Mapa lugares={filteredRestaurants}/>
     </div>
   );
 }

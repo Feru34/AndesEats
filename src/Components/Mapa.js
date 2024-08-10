@@ -2,9 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import Mapa from '../mapa.png';
 import LugarDetail from './LugarDetail';
 import './Mapa.css';
-import lugares from '../data/lugares.json'; // Importa el JSON
 
-const IMapa = () => {
+const IMapa = ({ lugares }) => {
   const [scale, setScale] = useState(1);
   const [panning, setPanning] = useState(false);
   const [pointX, setPointX] = useState(0);

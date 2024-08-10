@@ -30,7 +30,6 @@ const LugarDetail = (props) => {
           {props.Domicilios === 'Si' && <span className="tag">Domicilios</span>}
           {props.MenuVegetariano === 'Si' && <span className="tag">Menú Vegetariano</span>}
           {props.Tarjeta === 'Si' && <span className="tag">Tarjeta Aceptada</span>}
-          {props.domicilios === 'Si' && <span className="tag">Tarjeta Aceptada</span>}
         </div>
         <button className="close-btn" onClick={() => props.SetActivePoint(null)}>Cerrar</button>
       </div>
