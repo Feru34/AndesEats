@@ -27,9 +27,10 @@ const LugarDetail = (props) => {
         {props.PrecioDesayunos && <p><strong>Precio Desayunos:</strong> {props.PrecioDesayunos}</p>}
 
         <div className="tags">
-          {props.Domicilios === 'Sí' && <span className="tag">Domicilios</span>}
-          {props.MenuVegetariano === 'Sí' && <span className="tag">Menú Vegetariano</span>}
-          {props.Tarjeta === 'Sí' && <span className="tag">Tarjeta Aceptada</span>}
+          {props.Domicilios === 'Si' && <span className="tag">Domicilios</span>}
+          {props.MenuVegetariano === 'Si' && <span className="tag">Menú Vegetariano</span>}
+          {props.Tarjeta === 'Si' && <span className="tag">Tarjeta Aceptada</span>}
+          {props.domicilios === 'Si' && <span className="tag">Tarjeta Aceptada</span>}
         </div>
         <button className="close-btn" onClick={() => props.SetActivePoint(null)}>Cerrar</button>
       </div>
