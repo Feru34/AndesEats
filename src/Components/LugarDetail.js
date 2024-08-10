@@ -20,9 +20,9 @@ const LugarDetail = (props) => {
       <div className="info-box">
         <h1>{props.Nombre}</h1>
         <Stars rating={props.Rating} />
-        <h3 className="ubicacion">Dirección: {props.Direccion}</h3>
+        <h3 className="ubicacion">Ubicación: {props.Direccion}</h3>
         <p className="description">{props.Descripcion}</p>
-        <p><strong>Teléfono:</strong> {props.Telefono}</p>
+        <p><strong>Contacto:</strong> {props.Telefono}</p>
         <p><strong>Precio Menú del Día:</strong> {props.PrecioMenuDia}</p>
         {props.PrecioDesayunos && <p><strong>Precio Desayunos:</strong> {props.PrecioDesayunos}</p>}
 
