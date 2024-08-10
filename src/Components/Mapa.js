@@ -157,7 +157,7 @@ const IMapa = ({ lugares }) => {
               style={{
                 left: `${lugar.coordenadas.x}%`,
                 top: `${lugar.coordenadas.y}%`,
-                transform: `scale(${1 / scale})`
+                transform: `scale(${1.3 / scale})`
               }}
               onClick={() => handlePointClick(lugar)}
               onTouchStart={() => handlePointClick(lugar)} // Añadir evento onTouchStart
