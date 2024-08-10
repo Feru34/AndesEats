@@ -1,5 +1,4 @@
-// src/Components/LugarDetail.js 
- import React from 'react';
+import React from 'react';
 import './LugarDetail.css';
 
 // Componente para renderizar estrellas
@@ -18,23 +17,24 @@ const Stars = ({ rating }) => {
 const LugarDetail = (props) => {
   return (
     <div className="overlay">
-        <div className="info-box">
+      <div className="info-box">
         <h1>{props.Nombre}</h1>
         <Stars rating={props.Rating} />
-        <h3 className="ubicacion" >Dirección: {props.Ubicacion}</h3>
+        <h3 className="ubicacion">Dirección: {props.Direccion}</h3>
         <p className="description">{props.Descripcion}</p>
-        <div className="comments">
-            <h3>Etiquetas :</h3>
-            <ul className="comment-list">
-            {props.Etiquetas.map((etiqueta, index) => (
-                <li key={index} className="comment">{etiqueta}</li>
-            ))}
-            </ul>
+        <p><strong>Teléfono:</strong> {props.Telefono}</p>
+        <p><strong>Precio Menú del Día:</strong> {props.PrecioMenuDia}</p>
+        {props.PrecioDesayunos && <p><strong>Precio Desayunos:</strong> {props.PrecioDesayunos}</p>}
+
+        <div className="tags">
+          {props.Domicilios === 'Sí' && <span className="tag">Domicilios</span>}
+          {props.MenuVegetariano === 'Sí' && <span className="tag">Menú Vegetariano</span>}
+          {props.Tarjeta === 'Sí' && <span className="tag">Tarjeta Aceptada</span>}
         </div>
         <button className="close-btn" onClick={() => props.SetActivePoint(null)}>Cerrar</button>
-        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default LugarDetail;

@@ -1,8 +1,8 @@
-// src/Components/IMap.js
 import React, { useRef, useState, useEffect } from 'react';
 import Mapa from '../mapa.png';
 import LugarDetail from './LugarDetail';
 import './Mapa.css';
+import lugares from '../data/lugares.json'; // Importa el JSON
 
 const IMapa = () => {
   const [scale, setScale] = useState(1);
@@ -10,11 +10,6 @@ const IMapa = () => {
   const [pointX, setPointX] = useState(0);
   const [pointY, setPointY] = useState(0);
   const [start, setStart] = useState({ x: 0, y: 0 });
-  const [points, setPoints] = useState([
-    { x: 30, y: 56, info: 'Punto 1: Información sobre este punto' },
-    { x: 33, y: 68, info: 'Punto 2: Información sobre este punto' },
-    // Agrega más puntos según sea necesario
-  ]);
   const [activePoint, setActivePoint] = useState(null);
 
   const zoomRef = useRef(null);
@@ -147,8 +142,8 @@ const IMapa = () => {
     };
   }, [scale, panning, pointX, pointY, start]);
 
-  const handlePointClick = (info) => {
-    setActivePoint(info);
+  const handlePointClick = (lugar) => {
+    setActivePoint(lugar);
   };
 
   return (
@@ -156,17 +151,17 @@ const IMapa = () => {
       <div className="zoom_outer" ref={containerRef}>
         <div id="zoom" ref={zoomRef} style={{ transform: `translate(${pointX}px, ${pointY}px) scale(${scale})` }}>
           <img ref={imgRef} src={Mapa} alt="zoom" />
-          {points.map((point, index) => (
+          {lugares.map((lugar, index) => (
             <div
               key={index}
               className="point"
               style={{
-                left: `${point.x}%`,
-                top: `${point.y}%`,
+                left: `${lugar.coordenadas.x}%`,
+                top: `${lugar.coordenadas.y}%`,
                 transform: `scale(${1 / scale})`
               }}
-              onClick={() => handlePointClick(point.info)}
-              onTouchStart={() => handlePointClick(point.info)} // Añadir evento onTouchStart
+              onClick={() => handlePointClick(lugar)}
+              onTouchStart={() => handlePointClick(lugar)} // Añadir evento onTouchStart
             />
           ))}
         </div>
@@ -174,15 +169,21 @@ const IMapa = () => {
       {activePoint && (
         <LugarDetail  
           SetActivePoint={setActivePoint}
-          Nombre="Nombre del Restaurante"
-          Rating={4.5}
-          Ubicacion="Dirección del restaurante"
-          Descripcion="Descripción del restaurante y sus servicios."
-          Etiquetas={["Mexicano", "Almuerzo"]}
+          Nombre={activePoint.nombre}
+          Rating={4.5} // Supongamos que esto viene de alguna otra fuente o cálculo
+          Direccion={activePoint.direccion}
+          Telefono={activePoint.telefono}
+          PrecioMenuDia={activePoint.precio_menu_dia}
+          PrecioDesayunos={activePoint.precio_desayunos}
+          Domicilios={activePoint.domicilios}
+          MenuVegetariano={activePoint.menu_vegetariano}
+          Tarjeta={activePoint.tarjeta}
+          Descripcion={activePoint.descripcion}
+          Coordenadas={activePoint.coordenadas}
         />
       )}
     </div>
   );
-}
+};
 
 export default IMapa;

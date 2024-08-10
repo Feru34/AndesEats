@@ -1,0 +1,82 @@
+[
+    {
+        "nombre": "La estación (Panadería y cafeteria)",
+        "direccion": "Calle 22 #2-04",
+        "telefono": "3132512474",
+        "precio_menu_dia": 12000,
+        "precio_desayunos": 10900,
+        "domicilios": "Si",
+        "menu_vegetariano": "No",
+        "tarjeta": "Si",
+        "descripcion": "Para llevar cuesta 1000 más. Además, la tquetera cuesta 240.000 y por el precio de 20 almuerzos se ofrecen 22.",
+        "coordenadas": { "x": 10, "y": 56 }
+    },
+    {
+        "nombre": "Sabores Marinos",
+        "direccion": "Carrera 4 No. 16-83",
+        "telefono": "3142778984",
+        "precio_menu_dia": 18000,
+        "precio_platos_carta": "20000 en adelante",
+        "domicilios": "No",
+        "menu_vegetariano": "No",
+        "tarjeta": "No",
+        "descripcion": "La sopa vale unicamente 5000 y para llevar cuesta 1000 más. Es bastante cantidad la sopa y la bandeja con distintas opciones de pescado.",
+        "coordenadas": { "x": 20, "y": 56 }
+    },
+    {
+        "nombre": "Panadería Doña Blanca",
+        "direccion": "Cra 1 #20A-05",
+        "telefono": null,
+        "precio_especial": 14000,
+        "domicilios": "No",
+        "menu_vegetariano": "No",
+        "tarjeta": "No",
+        "descripcion": "No trae sopa.",
+        "coordenadas": { "x": 30, "y": 56 }
+    },
+    {
+        "nombre": "Restaurante Ajonjolí",
+        "direccion": "Cra 1 #20A-35",
+        "telefono": "3163007574",
+        "precio_menu_dia": 15000,
+        "precio_especial": 16000,
+        "domicilios": "Sí",
+        "menu_vegetariano": "Sí",
+        "tarjeta": "Si",
+        "descripcion": "La tiquetera es solo para estudiantes y se dan 20 almuerzos y cada uno queda en 14.500 (rebaja 20.000 en total).",
+        "coordenadas": { "x": 40, "y": 56 }
+    },
+    {
+        "nombre": "Merak Bistro",
+        "direccion": "Cra 1 #20A-41",
+        "telefono": "Ig: @merakbistro",
+        "precio_bandeja_especial": "15000 - 19000",
+        "domicilios": "No",
+        "menu_vegetariano": "Sí",
+        "tarjeta": "No",
+        "descripcion": "Son platos especiales, arroces o diferentes bandejas, sin sopa.",
+        "coordenadas": { "x": 50, "y": 56 }
+        
+    },
+    {
+        "nombre": "Puerto Arepa La Primera",
+        "direccion": "Cra 1 #21-22",
+        "telefono": "3184317606",
+        "precio_menu_dia": 12500,
+        "domicilios": "No",
+        "menu_vegetariano": "No",
+        "tarjeta": "No",
+        "coordenadas": { "x": 60, "y": 56 }
+    },
+    {
+        "nombre": "El buen sazón de la 22",
+        "direccion": "Calle 22 #2-82",
+        "telefono": "3125374555",
+        "precio_menu_dia": 12000,
+        "domicilios": "No",
+        "menu_vegetariano": "Sí",
+        "tarjeta": "No",
+        "descripcion": "Variedad en el menú, muy casero y buenas porciones. Para llevar, cuesta 2000 más. Después de las 5 los almuerzos quedan a 11.500.",
+        "coordenadas": { "x": 70, "y": 56 }
+    }
+]
