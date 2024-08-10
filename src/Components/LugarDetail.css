@@ -127,21 +127,11 @@
     font-size: 20px; /* Tamaño de las estrellas */
   }
 
-  .comment {
-    padding: 8px;
-  }
-
-  .tags {
-    text-align: center; /* Centra las etiquetas en dispositivos móviles */
-  }
-
   .nav-list {
     display: block; /* Hace que las etiquetas se muestren como bloques */
     margin: 5px auto; /* Centra las etiquetas y añade margen automático */
     font-size: 0.8em; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    text-align: center;
   }
 
-
-
-  
 }
