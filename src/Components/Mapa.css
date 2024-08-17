@@ -30,6 +30,12 @@
     background-color: red;
     border-radius: 50%;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .point:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   
