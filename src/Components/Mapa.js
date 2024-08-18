@@ -3,7 +3,7 @@ import Mapa from '../mapa.png';
 import LugarDetail from './LugarDetail';
 import './Mapa.css';
 
-const IMapa = ({ lugares }) => {
+const IMapa = ({ lugares, onClickMapa }) => {
   const [scale, setScale] = useState(1);
   const [panning, setPanning] = useState(false);
   const [pointX, setPointX] = useState(0);
@@ -145,8 +145,10 @@ const IMapa = ({ lugares }) => {
     setActivePoint(lugar);
   };
 
+  
+
   return (
-    <div>
+    <div className="mapa" onClick={onClickMapa}>
       <div className="zoom_outer" ref={containerRef}>
         <div id="zoom" ref={zoomRef} style={{ transform: `translate(${pointX}px, ${pointY}px) scale(${scale})` }}>
           <img ref={imgRef} src={Mapa} alt="zoom" />

@@ -14,4 +14,14 @@ html, body {
 }
 
 
+.header {
+  background-color: #f7f7f7;
+  color: #333333;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000; /* Asigna un z-index alto */
+}
+
+
 

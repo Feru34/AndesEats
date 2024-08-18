@@ -19,47 +19,40 @@
   height: 60px;
 }
 
-
 .nav-list {
-  list-style-type: none; /* Elimina los puntos de lista */
-  display: flex; /* Alinea los ítems de la lista horizontalmente */
-  justify-content: flex-end; /* Alinea los ítems a la derecha */
+  list-style-type: none; 
   padding: 0;
   margin: 0;
 }
 
 .nav-item {
-  margin-left: 15px; /* Espacio entre los botones */
+  margin-bottom: 15px; 
 }
 
 .nav-link {
-  background-color: #f7f7f7; /* Color de fondo de los botones */
-  border: 0px solid #ccc; /* Borde de los botones */
+  background-color: #f7f7f7;
+  border: 0px solid #ccc;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.2em;
-  color: #000000; /* Color del texto */
-  padding: 5px 10px; /* Espacio interno de los botones */
-  text-decoration: none; /* Elimina la subrayado de los enlaces */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  transition: background-color 0.3s ease; /* Suaviza el cambio de color de fondo */
+  color: #000000;
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #00d9ff; /* Color del texto */
+  color: #00d9ff;
 }
 
 .nav-link:active {
-  background-color: #ccc; /* Color de fondo al hacer clic */
+  background-color: #ccc;
 }
 
 .nav-link:focus {
-  outline: none; /* Elimina el borde de enfoque predeterminado */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Agrega una sombra al enfocar */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-
-
-
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -72,15 +65,24 @@
   }
 
   .nav {
-    display: none;
+
+    position: fixed;
+    top: 0;
+    right: -150px; /* Inicialmente oculto a la derecha */
+    height: 100%;
+    width: 150px;
+    background-color: #f7f7f7;
+    transition: right 0.3s ease; /* Transición para la animación */
+    padding-top: 60px; /* Espacio en la parte superior */
   }
 
   .nav.open {
-    display: block;
+    right: 0; /* Cuando se abre, se desplaza hacia la izquierda */
   }
 
-
-  
+  .nav-list {
+    display: block; /* Cambia la lista a formato vertical */
+  }
 }
 
 @media (min-width: 769px) {
@@ -89,6 +91,19 @@
   }
 
   .nav {
+    position: static;
+    height: auto;
+    width: auto;
     display: block;
+  }
+
+  .nav-list {
+    display: flex; /* Alinea los ítems horizontalmente en pantallas grandes */
+    justify-content: flex-end;
+  }
+
+  .nav-item {
+    margin-left: 15px;
+    margin-bottom: 0;
   }
 }

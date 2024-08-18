@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import logo from '../3.png';
-import jsonData from '../data/lugares.json'; // Asegúrate de tener tu JSON en la carpeta src y renómbralo
+import jsonData from '../data/lugares.json';
 
 const Header = ({ setFilteredRestaurants }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Muestra todos los datos sin filtros cuando la página se carga por primera vez
     setFilteredRestaurants(jsonData);
   }, [setFilteredRestaurants]);
 
@@ -15,25 +14,32 @@ const Header = ({ setFilteredRestaurants }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Funciones de filtrado
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  // Funciones de filtrado que cierran el menú
   const filterByVegetariano = () => {
     const filtered = jsonData.filter(item => item.menu_vegetariano === "Si");
     setFilteredRestaurants(filtered);
+    closeMenu();
   };
 
   const filterByDomicilios = () => {
     const filtered = jsonData.filter(item => item.domicilios === "Si");
     setFilteredRestaurants(filtered);
+    closeMenu();
   };
 
   const filterByTarjeta = () => {
     const filtered = jsonData.filter(item => item.tarjeta === "Si");
     setFilteredRestaurants(filtered);
+    closeMenu();
   };
 
   const resetFilters = () => {
-    // Restablece los datos sin filtros al hacer clic en el logo
     setFilteredRestaurants(jsonData);
+    closeMenu();
   };
 
   return (

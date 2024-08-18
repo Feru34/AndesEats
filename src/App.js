@@ -7,12 +7,17 @@ import Footer from './Components/Footer';
 
 function App() {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
   
 
   return (
     <div>
       <Header setFilteredRestaurants={setFilteredRestaurants} />
-      <Mapa lugares={filteredRestaurants}/>
+      <Mapa lugares={filteredRestaurants} onClickMapa={closeMenu}/>
       <Footer />
     </div>
   );
