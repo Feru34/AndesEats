@@ -27,6 +27,15 @@
   justify-content: center;
   align-items: center;
 }
+/* Animación para el contenedor de la información */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .info-box {
   position: fixed;
@@ -42,6 +51,9 @@
   max-width: 500px; /* Se reduce el ancho máximo del contenedor */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto', sans-serif;
+
+  /* Aplicar animación */
+  animation: fadeInScale 0.5s ease-in-out;
 }
 .info-box .description {
   word-wrap: break-word;
