@@ -31,8 +31,8 @@ const Header = ({ setFilteredRestaurants }) => {
     closeMenu();
   };
 
-  const filterByTarjeta = () => {
-    const filtered = jsonData.filter(item => item.tarjeta === "Si");
+  const filterByDescuento = () => {
+    const filtered = jsonData.filter(item => item.descuento === "Si");
     setFilteredRestaurants(filtered);
     closeMenu();
   };
@@ -59,7 +59,7 @@ const Header = ({ setFilteredRestaurants }) => {
               <button className="nav-link" onClick={filterByDomicilios}>Domicilios</button>
             </li>
             <li className="nav-item">
-              <button className="nav-link" onClick={filterByTarjeta}>Descuentos</button>
+              <button className="nav-link" onClick={filterByDescuento}>Descuentos</button>
             </li>
           </ul>
         </nav>
