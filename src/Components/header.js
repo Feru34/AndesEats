@@ -50,6 +50,7 @@ const Header = ({ setFilteredRestaurants }) => {
           &#9776;
         </button>
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+          <button className="close-menu" onClick={closeMenu}>×</button>
           <ul className="nav-list">
             <li className="nav-item">
               <button className="nav-link" onClick={filterByVegetariano}>Vegetariano</button>
@@ -58,7 +59,7 @@ const Header = ({ setFilteredRestaurants }) => {
               <button className="nav-link" onClick={filterByDomicilios}>Domicilios</button>
             </li>
             <li className="nav-item">
-              <button className="nav-link" onClick={filterByTarjeta}>Tarjeta</button>
+              <button className="nav-link" onClick={filterByTarjeta}>Descuentos</button>
             </li>
           </ul>
         </nav>

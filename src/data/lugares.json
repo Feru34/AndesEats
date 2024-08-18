@@ -41,7 +41,7 @@
         "precio": "18.000 menu del dia, 20.000 en adelante platos a la carta.",
         "domicilios": "No",
         "menu_vegetariano": "No",
-        "tarjeta": "No",
+        "descuento": "No",
         "descripcion": "La sopa vale unicamente 5000 y para llevar cuesta 1000 más. Es bastante cantidad la sopa y la bandeja con distintas opciones de pescado.",
         "coordenadas": { "x": 20, "y": 56 }
     },
@@ -52,7 +52,7 @@
         "precio": "14.000 especial (no trae sopa)",
         "domicilios": "No",
         "menu_vegetariano": "No",
-        "tarjeta": "No",
+        "descuento": "No",
         "descripcion": "Tiene mesas para sentarse y es bastante económico. ",
         "coordenadas": { "x": 30, "y": 56 }
     },
@@ -63,7 +63,7 @@
         "precio": "15.000 del día, 16.000 especial (arroz con pollo, bandeja paisa, etc)",
         "domicilios": "Si",
         "menu_vegetariano": "Si",
-        "tarjeta": "Si",
+        "descuento": "Si",
         "descripcion": "La tiquetera es solo para estudiantes y se dan 20 almuerzos y cada uno queda en 14.500 (rebaja 20.000 en total).",
         "coordenadas": { "x": 40, "y": 56 }
     },
@@ -74,7 +74,7 @@
         "precio": "Bandeja especial desde 15.000 hasta 19.000",
         "domicilios": "No",
         "menu_vegetariano": "Si",
-        "tarjeta": "No",
+        "descuento": "No",
         "descripcion": "Son platos especiales, arroces o diferentes bandejas, sin sopa.",
         "coordenadas": { "x": 50, "y": 56 }
         
@@ -86,7 +86,7 @@
         "precio": "12.500 menú del día",
         "domicilios": "Si",
         "menu_vegetariano": "No",
-        "tarjeta": "No",
+        "descuento": "No",
         "descripcion": "También venden arepas y desayunos deliciosos. ",
         "coordenadas": { "x": 60, "y": 56 }
     },
@@ -97,7 +97,7 @@
         "precio": "12.000 menú del día",
         "domicilios": "No",
         "menu_vegetariano": "Si",
-        "tarjeta": "No",
+        "descuento": "No",
         "descripcion": "Variedad en el menú, muy casero y buenas porciones. Para llevar, cuesta 2000 más. Después de las 5 los almuerzos quedan a 11.500.",
         "coordenadas": { "x": 70, "y": 56 }
     },
@@ -108,7 +108,7 @@
         "precio": "4.000 por taco",
         "domicilios": "No",
         "menu_vegetariano": "No",
-        "tarjeta": "No",
+        "descuento": "No",
         "descripcion": "Carrito de tacos de diferentes sabores a 4k. Sitio muy rico y económico para el bolsillo universitario. Abre desde las 3 pm.",
         "coordenadas": { "x": 42, "y": 60 } 
     },
@@ -119,7 +119,7 @@
         "precio": "8.000 por pizza",
         "domicilios": "No",
         "menu_vegetariano": "Si",
-        "tarjeta": "Si",
+        "descuento": "Si",
         "descripcion": "",
         "coordenadas": { "x": 30, "y": 42 }
     }

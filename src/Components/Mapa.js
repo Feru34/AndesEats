@@ -177,7 +177,7 @@ const IMapa = ({ lugares }) => {
           Precio={activePoint.precio}
           Domicilios={activePoint.domicilios}
           MenuVegetariano={activePoint.menu_vegetariano}
-          Tarjeta={activePoint.tarjeta}
+          descuento={activePoint.descuento}
           Descripcion={activePoint.descripcion}
           Coordenadas={activePoint.coordenadas}
         />

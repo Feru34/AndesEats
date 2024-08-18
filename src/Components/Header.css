@@ -53,6 +53,16 @@
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+.close-menu {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
