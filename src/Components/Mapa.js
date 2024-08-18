@@ -3,7 +3,7 @@ import Mapa from '../mapa.png';
 import LugarDetail from './LugarDetail';
 import './Mapa.css';
 
-const IMapa = ({ lugares, onClickMapa }) => {
+const IMapa = ({ lugares }) => {
   const [scale, setScale] = useState(1);
   const [panning, setPanning] = useState(false);
   const [pointX, setPointX] = useState(0);
@@ -148,7 +148,7 @@ const IMapa = ({ lugares, onClickMapa }) => {
   
 
   return (
-    <div className="mapa" onClick={onClickMapa}>
+    <div className="mapa" >
       <div className="zoom_outer" ref={containerRef}>
         <div id="zoom" ref={zoomRef} style={{ transform: `translate(${pointX}px, ${pointY}px) scale(${scale})` }}>
           <img ref={imgRef} src={Mapa} alt="zoom" />
@@ -173,9 +173,8 @@ const IMapa = ({ lugares, onClickMapa }) => {
           Nombre={activePoint.nombre}
           Rating={4.5} // Supongamos que esto viene de alguna otra fuente o cálculo
           Direccion={activePoint.direccion}
-          Telefono={activePoint.telefono}
-          PrecioMenuDia={activePoint.precio_menu_dia}
-          PrecioDesayunos={activePoint.precio_desayunos}
+          Contacto={activePoint.contacto}
+          Precio={activePoint.precio}
           Domicilios={activePoint.domicilios}
           MenuVegetariano={activePoint.menu_vegetariano}
           Tarjeta={activePoint.tarjeta}
