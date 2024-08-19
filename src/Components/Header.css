@@ -57,7 +57,7 @@
   font-size: 1.5em;
   background: none;
   border: none;
-  color: #000;
+  color: #f7f7f7;
   cursor: pointer;
   position: absolute;
   top: 10px;
@@ -72,6 +72,9 @@
     border: none;
     font-size: 2em;
     cursor: pointer;
+  }
+  .close-menu {
+    color:#000000
   }
 
   .nav {
