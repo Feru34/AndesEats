@@ -35,24 +35,21 @@
 
   .point {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    border-radius: 50%;
+    width: 30px; /* Ajusta el tamaño según lo necesites */
+    height: 30px; /* Ajusta el tamaño según lo necesites */
+    background-image: url('../../public/3.png'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; /* Mantén el borde redondeado para que coincida con la imagen */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-      /* Aplicar animación */
     animation: fadeInScale 1s ease-in-out;
   }
   
   .point:hover {
     transform: scale(1.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  
-
-  
-
-  
+    width: 32px; /* Ajusta el tamaño según lo necesites */
+    height: 32px; /* Ajusta el tamaño según lo necesites */
+    
+  } 
  
