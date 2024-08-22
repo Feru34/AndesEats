@@ -17,7 +17,25 @@
 .LogoHeader {
   width: auto;
   height: 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  animation: slideInFadeIn 0.5s forwards;
 }
+
+@keyframes slideInFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+img:hover {
+  transform: scale(1.2) rotate(10deg); /* Se agranda y rota al hacer hover */
+  filter: brightness(1.2); /* Añade un efecto de brillo */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
 
 .nav-list {
   list-style-type: none; 
