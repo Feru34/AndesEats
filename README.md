@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+Aquí tienes un ejemplo de README para el proyecto "Andes Eats":
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Andes Eats - Sitio Web de Recomendaciones de Restaurantes
 
-In the project directory, you can run:
+Bienvenido al repositorio oficial de **Andes Eats**, un sitio web diseñado para recomendar restaurantes económicos y variados a los miembros de la Universidad de los Andes. Andes Eats facilita a los estudiantes y al personal la búsqueda de opciones gastronómicas accesibles y cercanas.
 
-### `npm start`
+## Descripción
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Andes Eats es una plataforma dedicada a ofrecer recomendaciones de restaurantes que se ajustan a un presupuesto limitado y se encuentran cerca de la Universidad de los Andes. Este repositorio contiene el código fuente completo del sitio web, incluyendo todos los componentes, páginas y recursos necesarios.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**URL del sitio web**: [https://www.andeseats.com/](https://www.andeseats.com/)
 
-### `npm test`
+![image](https://github.com/user-attachments/assets/44c44d4f-0584-43eb-94ff-dba7a61cdc85)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Características
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Recomendaciones Personalizadas**: Encuentra restaurantes económicos y variados cerca de la Universidad de los Andes.
+- **Filtros de Búsqueda**: Filtra los resultados por tipo de comida, precio y ubicación.
+- **Mapa Interactivo**: Visualiza los restaurantes en un mapa para una mejor planificación.
+- **Valoraciones y Opiniones**: Lee reseñas y valoraciones de otros usuarios.
+- **Diseño Responsivo**: Optimizado para ofrecer una experiencia fluida en todos los dispositivos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnologías Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React**: Biblioteca frontend para construir interfaces de usuario.
+- **React Router**: Para manejar la navegación dentro de la aplicación.
+- **Axios/Fetch**: Para realizar solicitudes a la API de restaurantes.
+- **Mapbox/Leaflet**: Para integrar el mapa interactivo.
+- **Sass/Styled-Components**: Para el estilo de los componentes.
+- **Webpack**: Empaquetador de módulos para procesar y servir recursos.
 
-### `npm run eject`
+## Cómo Empezar
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para obtener una copia local y ponerla en funcionamiento, sigue estos pasos:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Requisitos Previos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Node.js (versión X.X.X)
+- npm (versión X.X.X) o yarn (versión X.X.X)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Instalación
 
-## Learn More
+1. Clona el repositorio:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/tuusuario/andes-eats.git
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Navega al directorio del proyecto:
 
-### Code Splitting
+   ```bash
+   cd andes-eats
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Instala las dependencias:
 
-### Analyzing the Bundle Size
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   o
 
-### Making a Progressive Web App
+   ```bash
+   yarn install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Ejecutar el Proyecto
 
-### Advanced Configuration
+Para iniciar el servidor de desarrollo:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start
+```
 
-### Deployment
+o
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+yarn start
+```
 
-### `npm run build` fails to minify
+El sitio web debería estar corriendo en `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Construcción para Producción
+
+Para crear una versión lista para producción:
+
+```bash
+npm run build
+```
+
+o
+
+```bash
+yarn build
+```
+
+La salida de la construcción estará en el directorio `build`, lista para ser desplegada.
