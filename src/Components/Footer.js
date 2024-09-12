@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   const handleClick = () => {
-    window.open("https://tu-link-al-formulario.com", "_blank");
+    window.open("https://forms.gle/E16Vgvry7myGz6WK6", "_blank");
   };
 
   return (
