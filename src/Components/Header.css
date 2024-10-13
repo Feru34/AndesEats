@@ -43,6 +43,8 @@
   transition: left 0.3s ease;
   overflow-y: auto;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav.open {
@@ -56,14 +58,15 @@
   color: #000;
   position: absolute;
   top: 10px;
-  left: 10px; /* Cambiado de 'right' a 'left' para posicionarlo en la esquina superior izquierda */
+  left: 10px;
   cursor: pointer;
 }
 
 .nav-list {
   list-style-type: none;
-  padding: 100px 20px 20px 20px; /* Añadido un padding-top para separar del botón de cerrar */
+  padding: 100px 20px 20px 20px; /* Ajustado el padding-top */
   margin: 0;
+  flex-grow: 1;
 }
 
 .nav-item {
@@ -94,6 +97,34 @@
 
 .reset-button:hover {
   color: #d32f2f;
+}
+
+.profile-section {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.user-email {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.logout-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
 }
 
 /* Estilos Responsivos */

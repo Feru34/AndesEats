@@ -5,10 +5,20 @@ import jsonData from '../data/lugares.json';
 
 const Header = ({ setFilteredRestaurants }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
     setFilteredRestaurants(jsonData);
+    const email = localStorage.getItem('userEmail'); // Obtener el correo del usuario
+    if (email) {
+      setUserEmail(email);
+    }
   }, [setFilteredRestaurants]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('userEmail'); // Eliminar el email del localStorage
+    window.location.reload(); // Recargar la página para volver al estado inicial
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -71,6 +81,12 @@ const Header = ({ setFilteredRestaurants }) => {
             <button className="nav-link reset-button" onClick={resetFilters}>Quitar Filtros</button>
           </li>
         </ul>
+        <div className="profile-section">
+          <p className="user-email">{userEmail}</p>
+          <button className="logout-button" onClick={handleLogout}>
+            Cerrar sesión
+          </button>
+        </div>
       </nav>
     </>
   );
