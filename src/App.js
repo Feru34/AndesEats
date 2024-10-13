@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Components/header';
 import Mapa from './Components/Mapa'
+import { initializeApp } from 'firebase/app';
 
 import './App.css';
 import Footer from './Components/Footer';
