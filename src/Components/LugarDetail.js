@@ -20,15 +20,15 @@ const LugarDetail = (props) => {
       <div className="info-box">
         <h1>{props.Nombre}</h1>
         <Stars rating={props.Rating} />
-        <h3 className="ubicacion"> {props.Direccion}</h3>
+        <h3 className="ubicacion">{props.Direccion}</h3>
         <p className="description">{props.Descripcion}</p>
         <p><strong>Contacto:</strong> {props.Contacto}</p>
         <p><strong>Precio:</strong> {props.Precio}</p>
 
         <div className="tags">
-          {props.Domicilios === 'Si' && <span className="tag">Domicilios</span>}
-          {props.MenuVegetariano === 'Si' && <span className="tag">Menú Vegetariano</span>}
-          {props.descuento === 'Si' && <span className="tag">Descuentos con ticketeras</span>}
+          {props.Domicilios && <span className="tag">Domicilios</span>}
+          {props.MenuVegetariano && <span className="tag">Menú Vegetariano</span>}
+          {props.Descuento && <span className="tag">Descuentos con ticketeras</span>}
         </div>
         <button className="close-btn" onClick={() => props.SetActivePoint(null)}>Cerrar</button>
       </div>

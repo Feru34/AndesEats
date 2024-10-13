@@ -1,14 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import logo from '../3.png';
-import jsonData from '../data/lugares.json';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 const Header = ({ setFilteredRestaurants }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    setFilteredRestaurants(jsonData);
+    const fetchRestaurants = async () => {
+      const db = getFirestore();
+      const restaurantesCollection = collection(db, 'Restaurante');
+      const restaurantesSnapshot = await getDocs(restaurantesCollection);
+      const restaurantesList = restaurantesSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setRestaurants(restaurantesList);
+      setFilteredRestaurants(restaurantesList);
+    };
+
+    fetchRestaurants();
+
     const email = localStorage.getItem('userEmail'); // Obtener el correo del usuario
     if (email) {
       setUserEmail(email);
@@ -30,25 +44,25 @@ const Header = ({ setFilteredRestaurants }) => {
 
   // Funciones de filtrado que cierran el menú
   const filterByVegetariano = () => {
-    const filtered = jsonData.filter(item => item.menu_vegetariano === "Si");
+    const filtered = restaurants.filter(item => item.menu_vegetariano === true);
     setFilteredRestaurants(filtered);
     closeMenu();
   };
 
   const filterByDomicilios = () => {
-    const filtered = jsonData.filter(item => item.domicilios === "Si");
+    const filtered = restaurants.filter(item => item.domicilios === true);
     setFilteredRestaurants(filtered);
     closeMenu();
   };
 
   const filterByDescuento = () => {
-    const filtered = jsonData.filter(item => item.descuento === "Si");
+    const filtered = restaurants.filter(item => item.ticketera === true);
     setFilteredRestaurants(filtered);
     closeMenu();
   };
 
   const resetFilters = () => {
-    setFilteredRestaurants(jsonData);
+    setFilteredRestaurants(restaurants);
     closeMenu();
   };
 

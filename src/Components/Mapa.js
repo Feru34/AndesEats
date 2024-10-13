@@ -145,8 +145,6 @@ const IMapa = ({ lugares }) => {
     setActivePoint(lugar);
   };
 
-  
-
   return (
     <div className="mapa" >
       <div className="zoom_outer" ref={containerRef}>
@@ -157,8 +155,8 @@ const IMapa = ({ lugares }) => {
               key={index}
               className="point"
               style={{
-                left: `${lugar.coordenadas.x}%`,
-                top: `${lugar.coordenadas.y}%`,
+                left: `${lugar.coordenada_x}%`, // Cambiado a 'coordenada_x'
+                top: `${lugar.coordenada_y}%`,  // Cambiado a 'coordenada_y'
                 transform: `scale(${1.3 / scale})`
               }}
               onClick={() => handlePointClick(lugar)}
@@ -177,9 +175,12 @@ const IMapa = ({ lugares }) => {
           Precio={activePoint.precio}
           Domicilios={activePoint.domicilios}
           MenuVegetariano={activePoint.menu_vegetariano}
-          descuento={activePoint.descuento}
+          Descuento={activePoint.ticketera} // Ajustamos 'Descuento' a 'ticketera' si corresponde
           Descripcion={activePoint.descripcion}
-          Coordenadas={activePoint.coordenadas}
+          Coordenadas={{
+            x: activePoint.coordenada_x,
+            y: activePoint.coordenada_y
+          }}
         />
       )}
     </div>
