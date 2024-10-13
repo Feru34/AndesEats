@@ -43,29 +43,37 @@ const Header = ({ setFilteredRestaurants }) => {
   };
 
   return (
-    <header className="header">
-      <div className="header-content">
-        <img className="LogoHeader" src={logo} alt="Logo" onClick={resetFilters} />
-        <button className="hamburger-menu" onClick={toggleMenu}>
-          &#9776;
-        </button>
-        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-          <button className="close-menu" onClick={closeMenu}>×</button>
-          <ul className="nav-list">
-            <li className="nav-item">
-              <button className="nav-link" onClick={filterByVegetariano}>Vegetariano</button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" onClick={filterByDomicilios}>Domicilios</button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" onClick={filterByDescuento}>Descuentos</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <>
+      <header className="header">
+        <div className="header-content">
+          <button className="hamburger-menu" onClick={toggleMenu}>
+            &#9776;
+          </button>
+          <div className="logo-container" onClick={resetFilters}>
+            <img className="LogoHeader" src={logo} alt="Logo" />
+          </div>
+        </div>
+      </header>
+
+      <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+        <button className="close-menu" onClick={closeMenu}>×</button>
+        <ul className="nav-list">
+          <li className="nav-item">
+            <button className="nav-link" onClick={filterByVegetariano}>Vegetariano</button>
+          </li>
+          <li className="nav-item">
+            <button className="nav-link" onClick={filterByDomicilios}>Domicilios</button>
+          </li>
+          <li className="nav-item">
+            <button className="nav-link" onClick={filterByDescuento}>Descuentos</button>
+          </li>
+          <li className="nav-item">
+            <button className="nav-link reset-button" onClick={resetFilters}>Quitar Filtros</button>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
-}
+};
 
 export default Header;

@@ -1,20 +1,37 @@
-import React, { useState } from 'react';
-import Header from './Components/header';
-import Mapa from './Components/Mapa'
-import { initializeApp } from 'firebase/app';
-
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Header from './Components/header'; // Asegúrate de que la importación tenga la misma capitalización
+import Mapa from './Components/Mapa';
+import Auth from './Components/Auth';
 import Footer from './Components/Footer';
 
+import './App.css';
+
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
+  useEffect(() => {
+    const email = localStorage.getItem('userEmail'); // Verificamos si hay un email guardado
+    if (email) {
+      setIsLoggedIn(true); // Si hay email, el usuario está logueado
+    }
+  }, []);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
 
   return (
     <div>
-      <Header setFilteredRestaurants={setFilteredRestaurants} />
-      <Mapa lugares={filteredRestaurants}/>
-      <Footer />
+      {isLoggedIn ? (
+        <div>
+          <Header setFilteredRestaurants={setFilteredRestaurants} />
+          <Mapa lugares={filteredRestaurants} />
+          <Footer />
+        </div>  
+      ) : (
+        <Auth onLogin={handleLogin} /> 
+      )}
     </div>
   );
 }

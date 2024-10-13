@@ -1,144 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
-
+/* Estilos del encabezado */
 .header {
   background-color: #f7f7f7;
   color: #333333;
   font-family: 'Ubuntu', sans-serif;
   padding: 10px 20px;
+  position: relative;
+  z-index: 100;
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+}
+
+.hamburger-menu {
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 15px;
 }
 
 .LogoHeader {
   width: auto;
   height: 60px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  animation: slideInFadeIn 0.5s forwards;
 }
 
-@keyframes slideInFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Estilos de la barra lateral */
+.nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #f7f7f7;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  z-index: 999;
 }
 
-.LogoHeader:hover {
-  transform: scale(1.2) rotate(10deg); /* Se agranda y rota al hacer hover */
-  filter: brightness(1.2); /* Añade un efecto de brillo */
-  transition: transform 0.3s ease, filter 0.3s ease;
+.nav.open {
+  left: 0;
 }
 
+.close-menu {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: #000;
+  position: absolute;
+  top: 10px;
+  left: 10px; /* Cambiado de 'right' a 'left' para posicionarlo en la esquina superior izquierda */
+  cursor: pointer;
+}
 
 .nav-list {
-  list-style-type: none; 
-  padding: 0;
+  list-style-type: none;
+  padding: 100px 20px 20px 20px; /* Añadido un padding-top para separar del botón de cerrar */
   margin: 0;
 }
 
 .nav-item {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 .nav-link {
-  background-color: #f7f7f7;
-  border: 0px solid #ccc;
+  background-color: transparent;
+  border: none;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.2em;
-  color: #000000;
-  padding: 5px 10px;
-  text-decoration: none;
+  color: #000;
+  padding: 10px 0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  width: 100%;
+  text-align: left;
 }
 
 .nav-link:hover {
   color: #00d9ff;
 }
 
-.nav-link:active {
-  background-color: #ccc;
+.reset-button {
+  font-weight: bold;
+  color: #f44336;
 }
 
-.nav-link:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-.close-menu {
-  font-size: 1.5em;
-  background: none;
-  border: none;
-  color: #f7f7f7;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.reset-button:hover {
+  color: #d32f2f;
 }
 
-/* Responsive adjustments */
+/* Estilos Responsivos */
 @media (max-width: 768px) {
-  .hamburger-menu {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2em;
-    cursor: pointer;
-  }
-  .close-menu {
-    color:#000000
+  .LogoHeader {
+    height: 50px;
   }
 
   .nav {
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    right: -150px; /* Inicialmente oculto a la derecha */
-    height: 100%;
-    width: 150px;
-    background-color: #eeeeee;
-    transition: right 0.5s ease; /* Transición para la animación */
-    padding-top: 60px; /* Espacio en la parte superior */
-  }
-
-  .nav-link {
-    background-color: #eeeeee;
+    width: 200px;
+    left: -200px;
   }
 
   .nav.open {
-    right: 0; /* Cuando se abre, se desplaza hacia la izquierda */
+    left: 0;
   }
 
-  .nav-list {
-    display: block; /* Cambia la lista a formato vertical */
-  }
-}
-
-@media (min-width: 769px) {
   .hamburger-menu {
-    display: none;
-  }
-
-  .nav {
-    position: static;
-    height: auto;
-    width: auto;
-    display: block;
-  }
-
-  .nav-list {
-    display: flex; /* Alinea los ítems horizontalmente en pantallas grandes */
-    justify-content: flex-end;
-  }
-
-  .nav-item {
-    margin-left: 15px;
-    margin-bottom: 0;
+    font-size: 1.8em;
   }
 }
