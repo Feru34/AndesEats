@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Header from './Components/header'; // Asegúrate de que la importación tenga la misma capitalización
 import Mapa from './Components/Mapa';
 import Auth from './Components/Auth';
-import Footer from './Components/Footer';
 
 import './App.css';
 
@@ -27,7 +26,6 @@ function App() {
         <div>
           <Header setFilteredRestaurants={setFilteredRestaurants} />
           <Mapa lugares={filteredRestaurants} />
-          {/* <Footer /> */}
         </div>  
       ) : (
         <Auth onLogin={handleLogin} /> 
