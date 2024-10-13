@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Header from './Components/Header'; // Asegúrate de que la importación tenga la capitalización correcta
+import Header from './Components/Header'; 
 import Mapa from './Components/Mapa';
 import Auth from './Components/Auth';
 

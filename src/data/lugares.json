@@ -6,7 +6,7 @@
         "precio": "Estudiantil 12.000 y 17.000 precio normal (la diferencia es el tamaño)",
         "domicilios": "Si",
         "menu_vegetariano": "No",
-        "Ticketera": "Si",
+        "ticketera": "Si",
         "descripcion": "Los jueves hay bandeja paisa y todos los dias parrilla mizta. Por la compra de 30 almuerzos se le descuentan 1000 pesos a cada uno del precio total (330,000)",
         "coordenadas": { "x": 15, "y": 56 }
     },
@@ -18,7 +18,7 @@
         "precio": "Menu del dia 12.000 ejecutivo 15.000 / 17.000",
         "domicilios": "Si",
         "menu_vegetariano": "Si",
-        "Ticketera": "Si",
+        "ticketera": "Si",
         "descripcion": "El menu tiene una gran variedad cada dia, los viernes tienen bandeja paisa aunque sale un poco más costoso. Con valera, cuesta 11.000 el almuerzo.",
         "coordenadas": { "x": 15, "y": 70 }
     },
@@ -30,7 +30,7 @@
         "precio": "12.000 menu del dia y desayunos a 10.900",
         "domicilios": "Si",
         "menu_vegetariano": "No",
-        "Ticketera": "Si",
+        "ticketera": "Si",
         "descripcion": "Para llevar cuesta 1000 más. Además, la tquetera cuesta 240.000 y por el precio de 20 almuerzos se ofrecen 22.",
         "coordenadas": { "x": 10, "y": 56 }
     },
