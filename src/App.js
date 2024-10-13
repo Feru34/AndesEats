@@ -27,7 +27,7 @@ function App() {
         <div>
           <Header setFilteredRestaurants={setFilteredRestaurants} />
           <Mapa lugares={filteredRestaurants} />
-          <Footer />
+          {/* <Footer /> */}
         </div>  
       ) : (
         <Auth onLogin={handleLogin} /> 
