@@ -48,7 +48,7 @@ const Auth = ({ onLogin }) => {
           que se ajustan al presupuesto de los estudiantes de la Universidad 
           de los Andes.
         </p>
-        <h2>{isRegistering ? 'Crear Cuenta' : 'Iniciar Sesión'}</h2>
+        
         {error && <p className="error">{error}</p>}
         <form onSubmit={isRegistering ? handleRegister : handleLogin}>
           <div className="input-group">
