@@ -1,3 +1,4 @@
+
 export default {
     apiKey: "AIzaSyAvvci6hnRBv7upjG-SdhMBqkXMJPCHiTI",
     authDomain: "andeseats.firebaseapp.com",

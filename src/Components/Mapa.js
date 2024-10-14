@@ -168,6 +168,7 @@ const IMapa = ({ lugares }) => {
       {activePoint && (
         <LugarDetail  
           SetActivePoint={setActivePoint}
+          ID = {activePoint.id} 
           Nombre={activePoint.nombre}
           Rating={4.5} // Supongamos que esto viene de alguna otra fuente o cálculo
           Direccion={activePoint.direccion}
