@@ -1,73 +1,114 @@
+/* Fondo con imagen y capa transparente */
+.auth-page {
+  background-image: url('https://keystoneacademic-res.cloudinary.com/image/upload/f_auto/q_auto/g_auto/c_fill/w_1280/element/19/199558_Optimized-199503_cover_photo-marioLaserna.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.auth-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Capa blanca transparente */
+  z-index: 0;
+}
+
 .auth-container {
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  width: 90%;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.auth-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.auth-description {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #555;
 }
 
 h2 {
-  text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-family: 'Roboto', sans-serif;
 }
 
 .input-group {
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  color: #555;
+  color: #777;
+  font-size: 0.9rem;
 }
 
 input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 16px;
 }
 
 button.login-button {
+  font-family: 'Roboto', sans-serif;
   width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
+  padding: 12px;
+  background-color: #2a57e9;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-bottom: 10px;
 }
 
 button.login-button:hover {
-  background-color: #45a049;
+  background-color: #274bc4;
 }
 
 button.toggle-button {
+  font-family: 'Roboto', sans-serif;
   width: 100%;
-  padding: 10px;
-  background-color: #2196F3;
-  color: white;
+  padding: 12px;
+  background-color: #2a57e954;
+  color: rgb(0, 17, 95);
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
 button.toggle-button:hover {
-  background-color: #0b7dda;
+  background-color: #2a57e994;
 }
 
 .error {
   color: red;
-  text-align: center;
   margin-bottom: 10px;
 }

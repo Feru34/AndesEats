@@ -6,6 +6,7 @@ import {
 } from 'firebase/auth';
 import { useFirebaseApp } from 'reactfire';
 import './Auth.css'; // Importamos los estilos
+import logo from '../3.png'; // Ajusta la ruta a tu logo
 
 const Auth = ({ onLogin }) => {
   const firebaseApp = useFirebaseApp(); // Inicializamos Firebase App
@@ -39,42 +40,50 @@ const Auth = ({ onLogin }) => {
   };
 
   return (
-    <div className="auth-container">
-      <h2>{isRegistering ? 'Crear Cuenta' : 'Iniciar Sesión'}</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={isRegistering ? handleRegister : handleLogin}>
-        <div className="input-group">
-          <label htmlFor="email">Correo electrónico</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="password">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className="login-button">
-          {isRegistering ? 'Registrarse' : 'Iniciar sesión'}
+    <div className="auth-page">
+      <div className="auth-container">
+        <img src={logo} alt="AndesEats Logo" className="auth-logo" />
+        <p className="auth-description">
+          AndesEats es una plataforma dedicada a ofrecer recomendaciones de restaurantes 
+          que se ajustan al presupuesto de los estudiantes de la Universidad 
+          de los Andes.
+        </p>
+        <h2>{isRegistering ? 'Crear Cuenta' : 'Iniciar Sesión'}</h2>
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={isRegistering ? handleRegister : handleLogin}>
+          <div className="input-group">
+            <label htmlFor="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="login-button">
+            {isRegistering ? 'Registrarse' : 'Iniciar sesión'}
+          </button>
+        </form>
+        <button
+          className="toggle-button"
+          onClick={() => setIsRegistering(!isRegistering)}
+        >
+          {isRegistering
+            ? '¿Ya tienes una cuenta? Inicia sesión'
+            : '¿No tienes cuenta? Regístrate'}
         </button>
-      </form>
-      <button
-        className="toggle-button"
-        onClick={() => setIsRegistering(!isRegistering)}
-      >
-        {isRegistering
-          ? '¿Ya tienes una cuenta? Inicia sesión'
-          : '¿No tienes cuenta? Regístrate'}
-      </button>
+      </div>
     </div>
   );
 };
