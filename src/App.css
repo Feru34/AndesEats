@@ -23,5 +23,13 @@ html, body {
   z-index: 1000; /* Asigna un z-index alto */
 }
 
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #2a57e9;
+}
 
 
