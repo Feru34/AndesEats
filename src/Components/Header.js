@@ -2,21 +2,70 @@ import React, { useEffect, useState } from 'react';
 import './Header.css';
 import logo from '../3.png';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { app } from '../firebase-config';
 
 const Header = ({ setFilteredRestaurants }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [restaurants, setRestaurants] = useState([]);
 
+  const toBoolean = (value) => {
+    if (typeof value === 'string') {
+      const normalized = value.trim().toLowerCase();
+      return normalized === 'true' || normalized === '1' || normalized === 'si';
+    }
+
+    if (typeof value === 'number') {
+      return value === 1;
+    }
+
+    return Boolean(value);
+  };
+
+  const normalizeRestaurantDoc = (doc) => {
+    const data = doc.data() ?? {};
+    const rawLatitude =
+      data?.pos?.latitude ??
+      data?.pos?.lat ??
+      data?.latitude ??
+      data?.lat ??
+      data?.latitud ??
+      data?.Latitud;
+    const rawLongitude =
+      data?.pos?.longitude ??
+      data?.pos?.lng ??
+      data?.longitude ??
+      data?.lng ??
+      data?.longitud ??
+      data?.Longitud;
+
+    const latitude = Number(rawLatitude);
+    const longitude = Number(rawLongitude);
+
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+      console.warn('Restaurante sin coordenadas validas, se omite:', doc.id, data);
+      return null;
+    }
+
+    return {
+      id: doc.id,
+      ...data,
+      pos: {
+        latitude,
+        longitude
+      }
+    };
+  };
+
   useEffect(() => {
     const fetchRestaurants = async () => {
-      const db = getFirestore();
+      const db = getFirestore(app);
       const restaurantesCollection = collection(db, 'Restaurante');
       const restaurantesSnapshot = await getDocs(restaurantesCollection);
-      const restaurantesList = restaurantesSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+      const restaurantesList = restaurantesSnapshot.docs
+        .map(normalizeRestaurantDoc)
+        .filter(Boolean);
+
       setRestaurants(restaurantesList);
       setFilteredRestaurants(restaurantesList);
     };
@@ -44,19 +93,25 @@ const Header = ({ setFilteredRestaurants }) => {
 
   // Funciones de filtrado que cierran el menú
   const filterByVegetariano = () => {
-    const filtered = restaurants.filter(item => item.menu_vegetariano === true);
+    const filtered = restaurants.filter(item =>
+      toBoolean(item.menuVegetariano ?? item.menu_vegetariano)
+    );
     setFilteredRestaurants(filtered);
     closeMenu();
   };
 
   const filterByDomicilios = () => {
-    const filtered = restaurants.filter(item => item.domicilios === true);
+    const filtered = restaurants.filter(item =>
+      toBoolean(item.domicilios ?? item.domicilio)
+    );
     setFilteredRestaurants(filtered);
     closeMenu();
   };
 
   const filterByDescuento = () => {
-    const filtered = restaurants.filter(item => item.ticketera === true);
+    const filtered = restaurants.filter(item =>
+      toBoolean(item.descuento ?? item.ticketera ?? item.tiquetera)
+    );
     setFilteredRestaurants(filtered);
     closeMenu();
   };

@@ -4,13 +4,12 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
-import { useFirebaseApp } from 'reactfire';
+import { app } from '../firebase-config';
 import './Auth.css'; // Importamos los estilos
 import logo from '../3.png'; // Ajusta la ruta a tu logo
 
 const Auth = ({ onLogin }) => {
-  const firebaseApp = useFirebaseApp(); // Inicializamos Firebase App
-  const auth = getAuth(firebaseApp); // Obtenemos la instancia de auth
+  const auth = getAuth(app); // Obtenemos la instancia de auth
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

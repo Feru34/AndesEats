@@ -9,7 +9,6 @@ import {
   addDoc,
   Timestamp
 } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
 import './LugarDetail.css';
 
 // Componente para renderizar estrellas
