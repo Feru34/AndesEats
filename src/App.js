@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect, useState } from 'react';
+import './App.css';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from './firebase-config';
 import MapLibreOSM from './Components/MapLibreOSM';
@@ -82,12 +83,14 @@ function AppContent() {
   };
 
   return (
-    <div>
+    <div className="app">
       {isLoggedIn ? (
-        <div className="app">
+        <>
           <Header setFilteredRestaurants={setFilteredRestaurants} />
-          <MapLibreOSM lugares={filteredRestaurants.length > 0 ? filteredRestaurants : lugares} />
-        </div>
+          <main className="app__map">
+            <MapLibreOSM lugares={filteredRestaurants.length > 0 ? filteredRestaurants : lugares} />
+          </main>
+        </>
       ) : (
         <Auth onLogin={handleLogin} />
       )}

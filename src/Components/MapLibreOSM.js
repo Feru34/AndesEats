@@ -425,7 +425,7 @@ const MapLibreOSM = ({ lugares, filtroTipoComida }) => {
 
   return (
     <>
-      <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />
+      <div ref={mapContainer} className="map-container" />
       {activePoint && (
         <LugarDetail
           {...activePoint}
