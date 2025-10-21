@@ -33,6 +33,20 @@ body,
   inset: 0;
 }
 
+.map-attribution {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-size: 12px;
+  line-height: 1;
+  color: #2f2f2f;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  z-index: 1500;
+}
+
 .header {
   background-color: #f7f7f7;
   color: #333333;

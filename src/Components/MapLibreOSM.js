@@ -196,13 +196,13 @@ const MapLibreOSM = ({ lugares, filtroTipoComida }) => {
       container: mapContainer.current,
       style: osmStyle,
       center: [-74.066, 4.603],
-      zoom: 17
+      zoom: 17,
+      attributionControl: true
     });
 
     map.current = instance;
 
     instance.addControl(new maplibregl.NavigationControl(), 'top-right');
-    instance.addControl(new maplibregl.AttributionControl(), 'bottom-right');
 
     const handleClusterClick = (event) => {
       if (!map.current) {
